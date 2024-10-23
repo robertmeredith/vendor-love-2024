@@ -5,6 +5,8 @@ const apiUrl = '/api/v1'
 // Create a custom axios instance
 export const customAxios = axios.create({
   baseURL: apiUrl,
+  // Added next line for deployment to Render
+  withCredentials: true,
   headers: {
     'Content-Type': 'application/json',
   },
