@@ -1,0 +1,21 @@
+// Default List of Categories Harcoded In App
+export const defaultWeddingCategories = [
+  'Band',
+  'Cake',
+  'Catering',
+  'Celebrant',
+  'Ceremony Venue',
+  'Dress Designer',
+  'Dress Store',
+  'DJ',
+  'Florist',
+  'Hair',
+  'MUA',
+  'Other',
+  'Photographer',
+  'Stationery',
+  'Transport',
+  'Venue',
+  'Videographer',
+  'Styling',
+]
