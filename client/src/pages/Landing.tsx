@@ -21,10 +21,9 @@ function Landing() {
               </h1>
             </div>
             {/* End Title */}
-            {/* Avatar Group */}
-            <div className="sm:flex sm:justify-center sm:items-center text-center sm:text-left">
+
+            {/* <div className="sm:flex sm:justify-center sm:items-center text-center sm:text-left">
               <div className="flex-shrink-0 pb-5 sm:flex sm:pb-0 sm:pr-5">
-                {/* Avatar Group */}
                 <div className="flex justify-center -space-x-3">
                   <img
                     className="inline-block h-8 w-8 rounded-full ring-2 ring-white "
@@ -52,7 +51,6 @@ function Landing() {
                     </span>
                   </span>
                 </div>
-                {/* End Avatar Group */}
               </div>
               <div className="border-t sm:border-t-0 sm:border-l border-gray-200 w-32 h-px sm:w-auto sm:h-full mx-auto sm:mx-0" />
               <div className="pt-5 sm:pt-0 sm:pl-5">
@@ -63,9 +61,7 @@ function Landing() {
                   Rated best over 37k reviews
                 </div>
               </div>
-            </div>
-            {/* End Avatar Group */}
-            {/* Form */}
+            </div> */}
 
             {/* <form>
               <div className="mx-auto max-w-2xl sm:flex sm:space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100">
