@@ -90,7 +90,6 @@ const UserEventForm = () => {
     remove,
     // used for replacing the default array of vendor fields once the users default vendors are fetched
     replace,
-    insert,
   } = useFieldArray({
     control,
     name: 'vendors',

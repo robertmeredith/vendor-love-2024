@@ -1,7 +1,14 @@
-import { Card, CardHeader, CardBody, CardFooter, Divider, Button } from '@nextui-org/react'
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Divider,
+  Button,
+} from '@nextui-org/react'
 import { SectionHeading } from '@/components'
 
-import { CalendarDays, CircleUserRound, PlusIcon } from 'lucide-react'
+import { CalendarDays, CircleUserRound } from 'lucide-react'
 import { useGetUserEvents } from '@/hooks/eventQueries'
 import { useGetAllUserVendors } from '@/hooks/vendorQueries'
 import { useNavigate } from 'react-router-dom'
@@ -15,7 +22,7 @@ function Summary() {
   // get vendors
   const { data: vendors } = useGetAllUserVendors()
 
-  console.log('VENDORS ', vendors);
+  console.log('VENDORS ', vendors)
 
   return (
     <>
@@ -28,7 +35,13 @@ function Summary() {
           <CardHeader className="flex flex-row items-center gap-2 text-2xl">
             <CalendarDays />
             Events
-            <Button variant="light" className="ml-auto" onClick={() => navigate('/dashboard/events')}>View Events</Button>
+            <Button
+              variant="light"
+              className="ml-auto"
+              onClick={() => navigate('/dashboard/events')}
+            >
+              View Events
+            </Button>
           </CardHeader>
           <Divider className="w-11/12 mx-auto" />
           <CardBody className="flex flex-col gap-2">
@@ -37,7 +50,14 @@ function Summary() {
           </CardBody>
           <Divider className="w-11/12 mx-auto" />
           <CardFooter className="flex gap-2">
-            <Button variant="light" className="ml-auto" color="primary" onClick={() => navigate('/dashboard/events/new')}>Add Event</Button>
+            <Button
+              variant="light"
+              className="ml-auto"
+              color="primary"
+              onClick={() => navigate('/dashboard/events/new')}
+            >
+              Add Event
+            </Button>
           </CardFooter>
         </Card>
         {/* Vendors */}
@@ -45,7 +65,13 @@ function Summary() {
           <CardHeader className="flex flex-row items-center gap-2 text-2xl">
             <CircleUserRound />
             Vendors
-            <Button variant="light" className="ml-auto" onClick={() => navigate('/dashboard/vendors')}>View Vendors</Button>
+            <Button
+              variant="light"
+              className="ml-auto"
+              onClick={() => navigate('/dashboard/vendors')}
+            >
+              View Vendors
+            </Button>
           </CardHeader>
           <Divider className="w-11/12 mx-auto" />
           <CardBody className="flex flex-col gap-2">
@@ -54,7 +80,14 @@ function Summary() {
           </CardBody>
           <Divider className="w-11/12 mx-auto" />
           <CardFooter className="flex flex-row justify-between">
-            <Button variant="light" color="primary" className="ml-auto" onClick={() => navigate('/dashboard/vendors/new')}>Add a vendor</Button>
+            <Button
+              variant="light"
+              color="primary"
+              className="ml-auto"
+              onClick={() => navigate('/dashboard/vendors/new')}
+            >
+              Add a vendor
+            </Button>
           </CardFooter>
         </Card>
       </div>

@@ -9,6 +9,7 @@ const connectDB = require('./db.js')
 
 // Initialise express
 const express = require('express')
+const cors = require('cors')
 const app = express()
 // Enables default handling of async errors without try catch - can just throw
 require('express-async-errors')
