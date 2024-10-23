@@ -18,7 +18,7 @@ require('express-async-errors')
 const { dirname } = require('path')
 const path = require('path')
 
-// DEPLOYMENT TO RENDER
+// DEPLOYMENT to Render
 app.use(
   cors({
     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
@@ -75,17 +75,17 @@ app.use(
 app.use(xss())
 app.use(mongoSanitize())
 
-// DEPLOYMENT
-const __dirName = dirname(require.main.filename)
+// DEPLOYMENT to Heroku - location of build file
+// const __dirName = dirname(require.main.filename)
 
 // Check if the environment is production
-if (process.env.NODE_ENV === 'production') {
-  // Serve static files from the 'client/build' directory
-  app.use(express.static(path.resolve(__dirname, 'client/build')))
-}
+// if (process.env.NODE_ENV === 'production') {
+//   // Serve static files from the 'client/build' directory
+//   app.use(express.static(path.resolve(__dirname, 'client/build')))
+// }
 
 // DEPLOYMENT - location of build file
-app.use(express.static(path.resolve(__dirName, 'client/build')))
+// app.use(express.static(path.resolve(__dirName, 'client/build')))
 
 app.get('/api/v1', (req, res) => {
   res.status(205).json({ msg: 'Welcome' })
