@@ -12,6 +12,17 @@ export const customAxios = axios.create({
   },
 })
 
+// Add request interceptor for debugging
+customAxios.interceptors.request.use(
+  (config) => {
+    console.log('Making request to:', config.url)
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+);
+
 export const getJWTAuthHeader = (userToken: string) => {
   return { Authorization: `Bearer ${userToken}` }
 }
