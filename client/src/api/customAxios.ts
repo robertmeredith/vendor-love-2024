@@ -1,6 +1,13 @@
 import axios from 'axios'
 
-const apiUrl = '/api/v1'
+// const apiUrl = '/api/v1'
+
+// Deployment to Render - In production, use the full URL of backend
+const apiUrl = import.meta.env.PROD 
+  ? 'https://vendor-love-2024.onrender.com/api/v1'
+  : '/api/v1'
+
+
 
 // Create a custom axios instance
 export const customAxios = axios.create({

@@ -15,8 +15,8 @@ const app = express()
 require('express-async-errors')
 
 // FOR DEPLOYMENT to Heroku
-const { dirname } = require('path')
-const path = require('path')
+// const { dirname } = require('path')
+// const path = require('path')
 
 // DEPLOYMENT to Render
 app.use(
