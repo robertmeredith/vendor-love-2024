@@ -32,7 +32,7 @@ function Summary() {
       />
       <div className="flex md:flex-row flex-col gap-4">
         <Card className="flex-1 p-1">
-          <CardHeader className="flex flex-row items-center gap-2 text-2xl">
+          <CardHeader className="flex flex-row items-center gap-2 text-2xl font-semibold">
             <CalendarDays />
             Events
             <Button
@@ -44,7 +44,7 @@ function Summary() {
             </Button>
           </CardHeader>
           <Divider className="w-11/12 mx-auto" />
-          <CardBody className="flex flex-col gap-2">
+          <CardBody className="flex flex-col gap-2 mx-3">
             <p>Number of events:</p>
             <p className="text-2xl font-bold">{events?.count}</p>
           </CardBody>
@@ -62,7 +62,7 @@ function Summary() {
         </Card>
         {/* Vendors */}
         <Card className="flex-1">
-          <CardHeader className="flex flex-row items-center gap-2 text-2xl">
+          <CardHeader className="flex flex-row items-center gap-2 text-2xl font-semibold">
             <CircleUserRound />
             Vendors
             <Button
@@ -74,7 +74,7 @@ function Summary() {
             </Button>
           </CardHeader>
           <Divider className="w-11/12 mx-auto" />
-          <CardBody className="flex flex-col gap-2">
+          <CardBody className="flex flex-col gap-2 mx-3">
             <p>Number of vendors:</p>
             <p className="text-2xl font-bold">{vendors?.count}</p>
           </CardBody>
@@ -86,7 +86,7 @@ function Summary() {
               className="ml-auto"
               onClick={() => navigate('/dashboard/vendors/new')}
             >
-              Add a vendor
+              Add Vendor
             </Button>
           </CardFooter>
         </Card>

@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: '/select',
+        path: 'select',
         element: <SelectTest />,
       },
       // TODO: remove this
@@ -108,7 +108,7 @@ function App() {
       <NextUIProvider navigate={router.navigate}>
         <main >
           <AuthContextProvider>
-            <Toaster />
+            <Toaster  />
             <RouterProvider router={router} />
           </AuthContextProvider>
         </main>

@@ -18,8 +18,7 @@ require('express-async-errors')
 const { dirname } = require('path')
 const path = require('path')
 
-// Add this near the top of your server.js
-// Code added for deployment to Render
+// DEPLOYMENT TO RENDER
 app.use(
   cors({
     origin: process.env.FRONTEND_URL || 'http://localhost:5173',
@@ -48,7 +47,6 @@ const userRouter = require('./routes/userRouter.js')
 const usersRouter = require('./routes/usersRouter.js')
 const submissionRouter = require('./routes/submissionRouter.js')
 const vendorRouter = require('./routes/vendorRouter.js')
-const userSettingsRouter = require('./routes/userSettingsRouter.js')
 
 // Import Middleware
 const morgan = require('morgan')
