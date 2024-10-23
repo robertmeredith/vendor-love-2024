@@ -1,3 +1,11 @@
+// Add this near the top of your server.js
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    credentials: true,
+  })
+)
+
 // env constants
 require('dotenv').config()
 const PORT = process.env.PORT || 5001
@@ -82,7 +90,7 @@ app.get('/api/v1', (req, res) => {
 })
 
 app.use('/api/v1/auth', apiLimiter, authRouter)
-app.use('/api/v1/events',eventRouter)
+app.use('/api/v1/events', eventRouter)
 app.use('/api/v1/user', userRouter)
 app.use('/api/v1/users', usersRouter)
 app.use('/api/v1/submissions', submissionRouter)
