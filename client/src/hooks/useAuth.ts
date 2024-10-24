@@ -21,7 +21,7 @@ export default function useAuth() {
   const { clearLoggedInData, setLoggedInData } = useLoggedInData()
 
   // LOGIN USER MUTATION
-  const { mutate: loginUser } = useMutation({
+  const { mutate: loginUser, isPending: loginPending } = useMutation({
     mutationFn: authService.login,
     onSuccess: (user) => {
       if (user) {
@@ -75,5 +75,5 @@ export default function useAuth() {
     queryClient.clear()
   }, [clearLoggedInData, clearUser, navigate, toast])
 
-  return { loginUser, registerUser, logout }
+  return { loginUser, registerUser, logout, loginPending }
 }

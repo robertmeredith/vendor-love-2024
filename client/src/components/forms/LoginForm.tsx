@@ -22,7 +22,7 @@ import { loginSchema } from '@/utils/zod.validation'
 type LoginSchemaType = z.infer<typeof loginSchema>
 
 function LoginForm() {
-  const { loginUser } = useAuth()
+  const { loginUser, loginPending } = useAuth()
   const { toast } = useToast()
 
   // Set up form
@@ -100,12 +100,11 @@ function LoginForm() {
                   )
                 }}
               />
-
               <Button
                 type="submit"
                 className="w-full mt-4 bg-gray-800 text-white"
               >
-                {isSubmitting ? 'Loading...' : 'Login'}
+                {loginPending ? 'Logging in...' : 'Login'}
               </Button>
               <Button variant="light" className="w-full">
                 Login with Google
