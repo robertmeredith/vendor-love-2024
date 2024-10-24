@@ -78,8 +78,17 @@ function SingleEvent() {
         heading={'Event Details'}
         text={'View and manage your client form submission'}
       />
-      <div className="flex flex-col md:flex-row gap-4 md:gap-2 mb-10">
-        <div className="flex gap-4 w-full">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-6 mb-10">
+        <Button
+          isDisabled={!data}
+          variant="flat"
+          color="secondary"
+          className="w-full md:w-40"
+          onClick={copyForEmail}
+        >
+          Copy for Email
+        </Button>
+        <div className="flex gap-4">
           <Button
             isDisabled={!data}
             variant="flat"
@@ -94,20 +103,11 @@ function SingleEvent() {
             isSelected={includeCategory}
             size="sm"
             onValueChange={setIncludeCategory}
-            className="min-w-max ml-auto md:m-0"
+            className="min-w-max md:m-0"
           >
             Include Category
           </Switch>
         </div>
-        <Button
-          isDisabled={!data}
-          variant="flat"
-          color="secondary"
-          className="w-full md:w-40 ml-auto"
-          onClick={copyForEmail}
-        >
-          Copy for Email
-        </Button>
       </div>
       {!data ? (
         <EventFormSkeleton />
