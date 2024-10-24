@@ -1,11 +1,16 @@
 import axios from 'axios'
 
+console.log('API URL:', import.meta.env.VITE_API_URL)
+console.log('Is Production:', import.meta.env.PROD)
+
 // const apiUrl = '/api/v1'
 
 // Deployment to Render - In production, use the full URL of backend
 const apiUrl = import.meta.env.PROD
-  ? `${process.env.VITE_API_URL}/api/v1`
+  ? `${import.meta.env.VITE_API_URL}/api/v1`
   : '/api/v1'
+
+console.log('API URL', apiUrl)
 
 // ? 'https://vendor-love-2024.onrender.com/api/v1'
 
