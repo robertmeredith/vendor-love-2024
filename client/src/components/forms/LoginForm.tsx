@@ -108,8 +108,8 @@ function LoginForm() {
               >
                 {loginPending ? 'Logging in...' : 'Login'}
               </Button>
-              <Button variant="light" className="w-full">
-                Login with Google
+              <Button variant="light" className="w-full" isDisabled>
+                Login with Google... coming soon
               </Button>
             </div>
             <div className="mt-4 text-center text-sm">
