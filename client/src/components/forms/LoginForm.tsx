@@ -103,6 +103,8 @@ function LoginForm() {
               <Button
                 type="submit"
                 className="w-full mt-4 bg-gray-800 text-white"
+                isLoading={loginPending}
+                isDisabled={loginPending}
               >
                 {loginPending ? 'Logging in...' : 'Login'}
               </Button>

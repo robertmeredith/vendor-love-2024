@@ -132,6 +132,8 @@ function RegisterForm() {
             <Button
               type="submit"
               className="w-full mt-4 bg-gray-800 text-white"
+              isLoading={registerPending}
+              isDisabled={registerPending}
             >
               {registerPending ? 'Signing up...' : 'Sign up'}
             </Button>
