@@ -24,8 +24,6 @@ function SingleEvent() {
     refetch()
   }, [refetch])
 
-  console.log('SINGLE EVENT DATA ', data)
-
   // Copy for Instagram
   const copyForInstagram = () => {
     // check if data is defined

@@ -7,11 +7,12 @@ type Props = {
   options: Vendor[]
   label: string
   isReadOnly?: boolean
+  onClear?: () => void
   handleSelectionChange: (_id: string) => void
 } & Omit<ControllerRenderProps, 'ref'>
 
 const VendorAutoComplete = forwardRef<HTMLInputElement, Props>(
-  ({ options, label, handleSelectionChange, isReadOnly, ...field }, ref) => {
+  ({ options, label, handleSelectionChange, isReadOnly, onClear, ...field }, ref) => {
     return (
       <Autocomplete
         ref={ref}
@@ -21,6 +22,7 @@ const VendorAutoComplete = forwardRef<HTMLInputElement, Props>(
           },
         }}
         // TODO: when clearing it should clear the whole row
+
         classNames={
           {
             // clearButton: 'hidden',
@@ -30,8 +32,23 @@ const VendorAutoComplete = forwardRef<HTMLInputElement, Props>(
         allowsCustomValue
         label={label || field.name}
         defaultItems={options}
-        onSelectionChange={(key) => handleSelectionChange(String(key))}
-        onInputChange={field.onChange}
+        // onSelectionChange={(key) => handleSelectionChange(String(key))}
+        onSelectionChange={(key) => {
+          if (key === '') {
+            onClear?.()
+          } else {
+            handleSelectionChange(String(key))
+          }
+        }}
+        // onInputChange={field.onChange}
+        onInputChange={(value) => {
+          field.onChange(value)
+          // if delete key is pressed, clear the value
+          
+          if (value === '') {
+            onClear?.()
+          }
+        }}
         menuTrigger="input"
         defaultInputValue={field.value}
         {...field}

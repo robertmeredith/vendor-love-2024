@@ -42,15 +42,13 @@ export default function Nav() {
   // State to handle hamburger menu
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  console.log('IS MENU OPEN', isMenuOpen)
-
   // Logout
   const { logout } = useAuth()
 
   // User check to determine if user valid
   const { data: user, isError } = useGetUser()
 
-  console.log('USER ', user)
+  // console.log('USER ', user)
 
   // Navigation
   const navigate = useNavigate()
@@ -62,8 +60,6 @@ export default function Nav() {
 
   const location = useLocation()
   const currentPath = location.pathname
-
-  console.log('CURRENT PATH', currentPath)
 
   // get fetching state to display spinner
   const isFetching = useIsFetching()

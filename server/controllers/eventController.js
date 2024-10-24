@@ -15,7 +15,7 @@ const createEvent = async (req, res) => {
 
   const { client, partner, email, eventDate, vendors } = req.body
 
-  console.log('REQUEST BODY', req.body)
+  console.log('CREATE EVENT REQUEST BODY', req.body)
 
   // Remove entries from vendors array where vendor name is empty
   const populatedVendors = vendors.filter((v) => v.vendor.name.trim() !== '')
@@ -97,6 +97,9 @@ const editEvent = async (req, res) => {
   const { id: eventId } = req.params
   const updatedEventData = req.body
   const { userId } = req.user
+
+
+  console.log('UPDATED EVENT DATA', updatedEventData.vendors)
 
   const event = await Event.findById(eventId)
 

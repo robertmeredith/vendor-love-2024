@@ -21,7 +21,7 @@ import {
 } from '@/helpers'
 
 // Icons
-import { Delete, ClipboardCopy } from 'lucide-react' 
+import { Delete, ClipboardCopy } from 'lucide-react'
 
 // Toast
 import { toast } from '@/components/ui/use-toast'
@@ -80,7 +80,7 @@ const CompletedEventForm = ({ event, includeCategory }: Props) => {
   // LOG FORM VALUES + ERRORS
   const formValues = watch() // This will give you the current form state
   console.log('Current form values: ', formValues)
-  console.log('ERRORS ', errors)
+  // console.log('ERRORS ', errors)
 
   const { fields, append, remove } = useFieldArray({
     control,
@@ -108,7 +108,7 @@ const CompletedEventForm = ({ event, includeCategory }: Props) => {
   const onSubmit: SubmitHandler<CompletedEventFormData> = async (
     data: CompletedEventFormData
   ) => {
-    console.log('DATA ', data)
+    console.log('COMPLETED EVENT FORM DATA ', data)
     // convert CalendarDate to Date string
     const formattedDate = convertCalendarDateToDate(data.eventDate)
 
@@ -121,11 +121,22 @@ const CompletedEventForm = ({ event, includeCategory }: Props) => {
 
   if (isLoadingSettings || isLoadingVendors) return <EventFormSkeleton />
 
-  
   // Reset form back to original values
   const revertChanges = () => {
     setIsReadOnly(true)
     reset(formDefaultValues)
+  }
+
+
+  const clearVendor = (index: number) => {
+    console.log('CLEAR VENDOR ', index)
+
+    setValue(`vendors.${index}.vendor`, {
+      name: '',
+      instagram: '',
+      website: '',
+      email: '',
+    })
   }
 
   return (
@@ -305,11 +316,13 @@ const CompletedEventForm = ({ event, includeCategory }: Props) => {
               name={`vendors.${index}.vendor.name`}
               render={({ field }) => (
                 <VendorAutoComplete
+                  onClear={() => clearVendor(index)}
                   {...field}
                   isReadOnly={isReadOnly}
                   options={allUserVendors?.vendors || []}
                   label="Vendor name"
                   handleSelectionChange={(key) => {
+                    console.log('HANDLE SELECTION CHANGE ', key)
                     fillExistingVendorsDetails(index, key)
                   }}
                 />

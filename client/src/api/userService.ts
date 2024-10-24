@@ -16,8 +16,6 @@ const getClientFormVendors = async (userId: string): Promise<Vendor[]> => {
 // PRIVATE - Get User - used for getting user account details in settings
 // accepts userToken directly - setting on the custom axios instance happens too slowly after refreshing the page and causes the user to be logged out
 const getUser = async (userToken: string | null): Promise<UserAccount> => {
-  console.log('userToken', userToken)
-
 
   if (!userToken) {
     throw new AxiosError('No user token provided')
