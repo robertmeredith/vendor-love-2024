@@ -38,7 +38,7 @@ function LoginForm() {
   const {
     control,
     handleSubmit,
-    formState: { errors, isValid, isSubmitted, isSubmitting },
+    formState: { errors, isValid, isSubmitted },
   } = form
 
   // On Submit function

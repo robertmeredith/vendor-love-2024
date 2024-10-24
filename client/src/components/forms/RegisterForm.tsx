@@ -22,14 +22,14 @@ import { defaultWeddingCategories } from '@/helpers'
 import CategoryAutoComplete from './NextUi/CategoryAutoComplete'
 
 function RegisterForm() {
-  const { registerUser } = useAuth()
+  const { registerUser, registerPending } = useAuth()
 
   // Set up form
   const {
     control,
     handleSubmit,
     watch,
-    formState: { errors, isSubmitting },
+    formState: { errors },
   } = useForm<RegistrationFormData>({
     resolver: zodResolver(registrationSchema),
     defaultValues: {
@@ -133,7 +133,7 @@ function RegisterForm() {
               type="submit"
               className="w-full mt-4 bg-gray-800 text-white"
             >
-              {isSubmitting ? 'Loading...' : 'Sign up'}
+              {registerPending ? 'Signing up...' : 'Sign up'}
             </Button>
             {/* TODO: ADD GOOGLE LOGIN */}
             {/* <Button variant="light" className="w-full">

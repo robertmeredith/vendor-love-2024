@@ -42,7 +42,7 @@ export default function useAuth() {
   })
 
   // REGISTER USER MUTATION
-  const { mutate: registerUser } = useMutation({
+  const { mutate: registerUser, isPending: registerPending } = useMutation({
     mutationFn: authService.register,
     onSuccess: (user: LoggedInData) => {
       if (user) {
@@ -75,5 +75,5 @@ export default function useAuth() {
     queryClient.clear()
   }, [clearLoggedInData, clearUser, navigate, toast])
 
-  return { loginUser, registerUser, logout, loginPending }
+  return { loginUser, registerUser, logout, loginPending, registerPending }
 }
