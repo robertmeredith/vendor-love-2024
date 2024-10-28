@@ -43,7 +43,7 @@ function Summary() {
           </CardHeader>
           <Divider className="w-11/12 mx-auto" />
           <CardBody className="flex flex-col gap-2 mx-3">
-            <p>Number of events:</p>
+            <p className="text-foreground/70">Number of events:</p>
             <Link to="/dashboard/events" className="max-w-max">
               <p className="text-2xl font-bold">{events?.count}</p>
             </Link>
@@ -73,7 +73,7 @@ function Summary() {
           </CardHeader>
           <Divider className="w-11/12 mx-auto" />
           <CardBody className="flex flex-col gap-2 mx-3">
-            <p>Number of vendors:</p>
+            <p className="text-foreground/70">Number of vendors:</p>
             <Link to="/dashboard/vendors" className="max-w-max">
               <h1 className="text-2xl font-bold">{vendors?.count}</h1>
             </Link>
