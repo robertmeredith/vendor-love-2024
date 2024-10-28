@@ -13,15 +13,7 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  DropdownItem,
-  DropdownTrigger,
-  Dropdown,
-  DropdownMenu,
-  Avatar,
-  NavbarMenuToggle,
-  NavbarMenu,
-  NavbarMenuItem,
-  Spinner,
+
 } from '@nextui-org/react'
 
 function Header() {
