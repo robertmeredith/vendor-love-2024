@@ -37,7 +37,7 @@ function Header() {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+      <NavbarContent className="sm:flex gap-4" justify="center">
         {/* Nav Items */}
         {landingNavItems.map((item) => (
           <NavbarItem key={item.label}>
